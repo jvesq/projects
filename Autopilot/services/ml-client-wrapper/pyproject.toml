@@ -1,0 +1,17 @@
+[project]
+name = "autopilot-ml-client-wrapper"
+version = "0.1.0"
+description = "Internal client for the four external ML services (Semantic Data Mapper, DQA, Enrichment, Anomaly Detection): auth, retries, timeouts, circuit breaking"
+requires-python = ">=3.11"
+dependencies = ["autopilot-core"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/autopilot_ml_client_wrapper"]
+
+[tool.uv.sources]
+autopilot-core = { workspace = true }
+

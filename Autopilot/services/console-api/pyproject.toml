@@ -1,0 +1,17 @@
+[project]
+name = "autopilot-console-api"
+version = "0.1.0"
+description = "Single FastAPI service exposing the REST + MCP tool surface, auth, RBAC, validation, audit fan-out, idempotency, and rate limiting"
+requires-python = ">=3.11"
+dependencies = ["autopilot-core"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/autopilot_console_api"]
+
+[tool.uv.sources]
+autopilot-core = { workspace = true }
+
